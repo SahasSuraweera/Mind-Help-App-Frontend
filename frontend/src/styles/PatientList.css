@@ -1,0 +1,80 @@
+.patient-list-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  font-family: Arial, sans-serif;
+}
+
+.patient-list-heading {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+.patient-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.patient-card {
+  background-color: white;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  overflow: visible;
+  min-height: 118px;
+}
+
+.patient-card:hover {
+  transform: translateY(-2px);
+  border-color: #007bff;
+  background-color: #f0f8ff;
+}
+
+.patient-card p {
+  margin: 0.25rem 0;
+  color: #555;
+}
+
+.card-main {
+  flex-grow: 1;
+  cursor: pointer;
+}
+
+.card-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  margin-left: 1rem;
+}
+
+.card-actions button {
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 6px;
+  background-color: #007bff;
+  color: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: background-color 0.3s ease;
+}
+
+.card-actions button:hover {
+  background-color: #0056b3;
+}
+
+.card-actions .delete-btn {
+  background-color: #dc3545;
+}
+
+.card-actions .delete-btn:hover {
+  background-color: #a71d2a;
+}

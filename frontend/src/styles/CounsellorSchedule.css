@@ -1,0 +1,57 @@
+.schedule-container {
+  max-width: 700px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.schedule-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+.schedule-title {
+  font-size: 22px;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
+  color: #1e88e5;
+  text-align: center;
+}
+
+.date-picker-wrapper {
+  margin-bottom: 1rem;
+}
+
+.date-picker {
+  padding: 8px;
+  font-size: 16px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.time-slot-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(110px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.time-slot {
+  background-color: #e3f2fd;
+  padding: 1rem;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+}
+
+.time-slot:hover {
+  background-color: #90caf9;
+  color: white;
+}
+.time-slot.selected {
+  background-color: #42a5f5;
+  color: white;
+}

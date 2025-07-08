@@ -1,0 +1,19 @@
+.slots-container {
+  padding: 20px;
+}
+
+.slots-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.slots-table th,
+.slots-table td {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+
+.slots-table th {
+  background-color: #f5f5f5;
+}

@@ -1,0 +1,90 @@
+.appointment-detail {
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.appointment-detail h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #333;
+}
+
+.appointment-detail label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+  color: #444;
+}
+
+.appointment-detail input[type="text"],
+.appointment-detail input[type="date"],
+.appointment-detail input[type="time"],
+.appointment-detail textarea {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: #fff;
+  transition: border-color 0.3s;
+}
+
+.appointment-detail input:focus,
+.appointment-detail textarea:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.appointment-detail textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.appointment-detail button {
+  padding: 10px 18px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.appointment-detail button:hover {
+  opacity: 0.95;
+}
+
+.appointment-detail button:first-of-type {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.appointment-detail button:last-of-type {
+  background-color: #dc3545;
+  color: #fff;
+}
+
+.readonly-field {
+  background-color: #e9ecef;
+  color: #495057;
+  border: none;
+  padding: 10px 12px;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 15px;
+}
+
+.readonly-label {
+  color: #6c757d;
+  font-size: 13px;
+  margin-bottom: 3px;
+  display: inline-block;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}

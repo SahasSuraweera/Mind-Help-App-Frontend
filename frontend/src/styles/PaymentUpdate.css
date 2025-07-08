@@ -1,0 +1,73 @@
+.payment-update-container {
+  max-width: 300px;
+  margin: 2rem auto; /* center horizontally with top/bottom margin */
+  padding: 2rem 2.5rem;
+  background-color: #fff;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+  box-sizing: border-box;
+  justify-content: center;
+  column-gap: normal;
+  max-height: fit-content;
+}
+
+.payment-update-container h2 {
+  margin-bottom: 1.5rem;
+  color: #004080;
+  text-align: center;
+}
+
+.payment-update-container p {
+  margin: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.payment-update-container label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: 600;
+  color: #003366;
+}
+
+.payment-update-container input[type="number"],
+.payment-update-container select {
+  width: 100%;
+  padding: 0.4rem 0.6rem;
+  margin-top: 0.3rem;
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+  box-sizing: border-box;
+}
+
+.payment-update-container input[type="number"]:focus,
+.payment-update-container select:focus {
+  border-color: #004080;
+  outline: none;
+}
+
+.payment-update-container button {
+  margin-top: 1.8rem;
+  width: 100%;
+  padding: 0.7rem;
+  background-color: #004080;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: 700;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.payment-update-container button:disabled {
+  background-color: #7a9cc6;
+  cursor: not-allowed;
+}
+
+.payment-update-container button:hover:not(:disabled) {
+  background-color: #003366;
+}

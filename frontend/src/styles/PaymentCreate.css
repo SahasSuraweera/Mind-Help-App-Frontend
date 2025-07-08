@@ -1,0 +1,93 @@
+/* Container centered and limited width */
+.page-container {
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #fff;
+}
+
+/* Heading */
+.page-container h2 {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  color: #333;
+}
+
+/* Card with shadow */
+.info-card {
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  padding: 20px 25px;
+  margin-bottom: 2rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #444;
+}
+
+/* Label inside card */
+.info-card label {
+  display: block;
+  font-weight: 400;
+  font-size: 0.85rem;
+  color: #666;
+  margin-bottom: 0.3rem;
+}
+
+/* Form styling */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+/* Label for inputs */
+.form label {
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+  color: #555;
+  display: block;
+}
+
+/* Inputs and selects style */
+.form input[type="number"],
+.form select {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  transition: border-color 0.3s ease;
+}
+
+.form input[type="number"]:focus,
+.form select:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+/* Submit button */
+.form button[type="submit"] {
+  padding: 12px;
+  background-color: #007bff;
+  border: none;
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form button[type="submit"]:hover:not(:disabled) {
+  background-color: #0056b3;
+}
+
+.form button[type="submit"]:disabled {
+  background-color: #8ab6ff;
+  cursor: not-allowed;
+}

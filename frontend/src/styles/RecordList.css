@@ -1,0 +1,54 @@
+/* RecordList.css */
+
+.record-list {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.05);
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.record-list-title {
+  text-align: center;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+.no-records {
+  text-align: center;
+  color: #777;
+  font-style: italic;
+}
+
+.record-items {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.record-item {
+  padding: 1rem;
+  margin-bottom: 1rem;
+  background-color: #fff;
+  border-left: 4px solid #007bff;
+  border-radius: 6px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+}
+
+.record-date {
+  font-weight: 600;
+  color: #007bff;
+  margin-bottom: 0.25rem;
+}
+
+.record-description {
+  color: #333;
+  margin-bottom: 0.25rem;
+}
+
+.record-doctor {
+  color: #666;
+  font-size: 0.95rem;
+}
