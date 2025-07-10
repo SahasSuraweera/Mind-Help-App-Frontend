@@ -1,6 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
+import { useLocation } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
+import Login from './components/Login';
 import Home from './components/Home';
 import PatientForm from './components/PatientForm';
 import PatientList from './components/PatientList';
@@ -29,52 +32,68 @@ function RecordListWrapper() {
   const { id } = useParams();
   return <RecordList patientId={id} />;
 }
-function App() {
-  return (
-    <Router>
-      <div className="app-container">
-        <header className="app-header">
-          <h1>🩺 MindHelp Counselling Management System</h1>
-          <nav className="nav-bar">
-            <Link to="/">Home</Link>
-            <Link to="/patients">Patients</Link>
-            <Link to="/Staff">Staff</Link>
-            <Link to="/counsellors">Counsellors</Link>
-            <Link to="/appointments">Appointments</Link>
-            <Link to="/payments">Payments</Link>
-        </nav>
-        </header>
 
-        <main className="app-main">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/patients/new" element={<PatientForm />} />
-            <Route path="/patients" element={<PatientList />} />
-            <Route path="/patients/:id" element={<PatientDetails />} />
-            <Route path="/patients/:id/update" element={<PatientUpdate />} />
-            <Route path="/patients/:id/records/new" element={<RecordForm />} />
-            <Route path="/patients/:id/records" element={<RecordListWrapper />} />
-            <Route path="/appointments" element={<AppointmentList />} />
-            <Route path="/payments/appointment/:appointmentId" element={<PaymentCreate />} />
-            <Route path="/payments" element={<PaymentList />} />
-            <Route path="/payments/update/:paymentId" element={<PaymentUpdate />} />
-            <Route path="/counsellors" element={<CounsellorList />} />
-            <Route path="/counsellors/schedule/:counsellorId" element={<CounsellorSchedule />} />
-            <Route path="/appointments/create/:counsellorId" element={<AppointmentCreate />} />
-            <Route path="/appointment/update/:appointmentId" element={<AppointmentUpdate />} />
-            <Route path="/staff" element={<Staff />} />
-            <Route path="/staff/new" element={<StaffForm />} />
-            <Route path="/staff/view/:staffId" element={<StaffView />} />
-            <Route path="/staff/update/:staffId" element={<StaffUpdate />} />
-            <Route path="/counsellor/schedule/:counsellorId" element={<CounsellorScheduleCreate />} />
-                 
-          </Routes>
-        </main>
-        <footer className="app-footer">
-          <p>&copy; {new Date().getFullYear()} MindHelp — All rights reserved</p>
-        </footer>
-      </div>
-    </Router>
+function App() {
+  const location = useLocation();
+  const showNavBar = location.pathname !== '/';
+
+  return (
+    <div className="app-container">
+      <header className="app-header">
+        <h1>🩺 MindHelp Counselling Management System</h1>
+        {showNavBar && (
+          <nav className="nav-bar">
+            <NavLink to="/home" end className={({ isActive }) => (isActive ? 'active' : '')}>
+              Home
+            </NavLink>
+            <NavLink to="/patients" className={({ isActive }) => (isActive ? 'active' : '')}>
+              Patients
+            </NavLink>
+            <NavLink to="/counsellors" className={({ isActive }) => (isActive ? 'active' : '')}>
+              Book Appointment
+            </NavLink>
+            <NavLink to="/appointments" className={({ isActive }) => (isActive ? 'active' : '')}>
+              Appointments
+            </NavLink>
+            <NavLink to="/payments" className={({ isActive }) => (isActive ? 'active' : '')}>
+              Payments
+            </NavLink>
+            <NavLink to="/staff" className={({ isActive }) => (isActive ? 'active' : '')}>
+              Staff
+            </NavLink>
+          </nav>
+        )}
+      </header>
+
+      <main className="app-main">
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/patients/new" element={<PatientForm />} />
+          <Route path="/patients" element={<PatientList />} />
+          <Route path="/patients/:id" element={<PatientDetails />} />
+          <Route path="/patients/:id/update" element={<PatientUpdate />} />
+          <Route path="/patients/:id/records/new" element={<RecordForm />} />
+          <Route path="/patients/:id/records" element={<RecordListWrapper />} />
+          <Route path="/appointments" element={<AppointmentList />} />
+          <Route path="/payments/appointment/:appointmentId" element={<PaymentCreate />} />
+          <Route path="/payments" element={<PaymentList />} />
+          <Route path="/payments/view/:paymentId" element={<PaymentUpdate />} />
+          <Route path="/counsellors" element={<CounsellorList />} />
+          <Route path="/counsellors/schedule/:counsellorId" element={<CounsellorSchedule />} />
+          <Route path="/appointments/create/:counsellorId" element={<AppointmentCreate />} />
+          <Route path="/appointment/update/:appointmentId" element={<AppointmentUpdate />} />
+          <Route path="/staff" element={<Staff />} />
+          <Route path="/staff/new" element={<StaffForm />} />
+          <Route path="/staff/view/:staffId" element={<StaffView />} />
+          <Route path="/staff/update/:staffId" element={<StaffUpdate />} />
+        </Routes>
+      </main>
+
+      <footer className="app-footer">
+        <p>&copy; {new Date().getFullYear()} MindHelp — All rights reserved</p>
+      </footer>
+    </div>
   );
 }
 

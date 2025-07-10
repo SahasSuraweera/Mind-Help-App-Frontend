@@ -8,6 +8,7 @@ export default function PaymentList() {
   const [payments, setPayments] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
   const [allPayments, setAllPayments] = useState([]);
+  const [filterType, setFilterType] = useState('paymentId'); // Default filter
 
   useEffect(() => {
     paymentApi.get('/payments')
@@ -27,37 +28,63 @@ export default function PaymentList() {
   }, []);
 
   useEffect(() => {
-    if (searchTerm.trim() === '') {
-      setPayments(allPayments);
-    } else {
-      paymentApi.get(`/payments/${searchTerm}`)
-        .then(res => {
-          setPayments([res.data]);
-        })
-        .catch(err => {
-          console.error(`Payment ID ${searchTerm} not found`, err);
-          setPayments([]);
-        });
+  if (searchTerm.trim() === '') {
+    setPayments(allPayments); // allPayments: state where you store original data
+  } else {
+    let endpoint = '';
+    switch (filterType) {
+      case 'paymentId':
+        endpoint = `/payments/${searchTerm}`;
+        break;
+      case 'appointmentId':
+        endpoint = `/payments/appointment/${searchTerm}`;
+        break;
+      case 'patientId':
+        endpoint = `/payments/patient/${searchTerm}`;
+        break;
+      default:
+        console.error('Invalid filter type');
+        return;
     }
-  }, [searchTerm]);
+
+    paymentApi.get(endpoint)
+      .then(res => {
+        // If `paymentId` returns a single object, wrap it as an array
+        const data = Array.isArray(res.data) ? res.data : [res.data];
+        setPayments(data);
+      })
+      .catch(err => {
+        console.error(`Error searching by ${filterType}:`, err);
+        setPayments([]);
+      });
+  }
+}, [searchTerm, filterType, allPayments]);
 
   return (
     <div className="payment-list-container">
       <h2 className="payment-list-heading">Payments</h2>
 
-      <input
-        type="text"
-        className="search-bar"
-        placeholder="Search by Payment ID"
-        value={searchTerm}
-        onChange={(e) => setSearchTerm(e.target.value)}
-      />
+      <div className="filter-section">
+     <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>
+    <option value="paymentId">Payment ID</option>
+    <option value="appointmentId">Appointment ID</option>
+    <option value="patientId">Patient ID</option>
+    </select>
+
+  <input
+    type="text"
+    placeholder={`Search by ${filterType}`}
+    value={searchTerm}
+    onChange={(e) => setSearchTerm(e.target.value)}
+  />
+</div>
 
       <table className="payment-table">
         <thead>
           <tr>
             <th>Payment ID</th>
             <th>Appointment ID</th>
+            <th>Patient ID</th>
             <th>Amount (Rs.)</th>
             <th>Payment Type</th>
             <th>Date</th>
@@ -72,6 +99,7 @@ export default function PaymentList() {
               <tr key={payment.paymentId}>
                 <td>{payment.paymentId}</td>
                 <td>{payment.appointmentId}</td>
+                <td>{payment.patientId || "N/A"}</td>
                 <td>{payment.amount}</td>
                 <td>{payment.paymentType}</td>
                 <td>{payment.date}</td>
@@ -86,9 +114,9 @@ export default function PaymentList() {
                 <td>
                   <button
                     className="btn-update"
-                    onClick={() => navigate(`/payments/update/${payment.paymentId}`)}
+                    onClick={() => navigate(`/payments/view/${payment.paymentId}`)}
                   >
-                    Update
+                    View
                   </button>
                 </td>
               </tr>

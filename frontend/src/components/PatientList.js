@@ -28,10 +28,16 @@ export default function PatientList() {
     <div className="patient-list-container">
       <h2 className="patient-list-heading">All Patients</h2>
       <ul className="patient-list">
+        <button className="add-patient-button" onClick={() => navigate('/patients/new')}>
+          ➕ Add New Patient
+        </button>
+        <br />
+        <br />
         {patients.map((p) => (
           <li key={p.id} className="patient-card">
             <div className="card-main" onClick={() => navigate(`/patients/${p.id}`)}>
               <strong>{p.name}</strong>
+              <p>Patient ID:{p.id}</p>
               <p>Email: {p.email}</p>
               <p>Phone: {p.phone}</p>
             </div>

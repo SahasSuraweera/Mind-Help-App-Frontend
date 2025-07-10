@@ -1,0 +1,61 @@
+/* Login.css */
+
+.signin-container {
+  max-width: 360px;
+  margin: 80px auto;
+  padding: 30px 25px;
+  background: #f5f7fa;
+  border-radius: 8px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+}
+
+.signin-container h2 {
+  margin-bottom: 25px;
+  color: #333;
+  font-weight: 600;
+}
+
+.signin-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.signin-container input[type="text"],
+.signin-container input[type="password"] {
+  padding: 12px 15px;
+  font-size: 16px;
+  border: 1.8px solid #ddd;
+  border-radius: 6px;
+  transition: border-color 0.3s ease;
+}
+
+.signin-container input[type="text"]:focus,
+.signin-container input[type="password"]:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.signin-container button {
+  padding: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.25s ease;
+}
+
+.signin-container button:hover {
+  background-color: #0056b3;
+}
+.signin-container .error-message {
+  color: #d9534f;
+  font-size: 14px;
+  margin-top: 10px;
+}
