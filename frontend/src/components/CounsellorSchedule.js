@@ -18,7 +18,7 @@ export default function CounsellorSchedule() {
   const hourlyRate = location.state?.hourlyRate || 0;
   const displayName = location.state?.displayName || 'Unknown Counsellor';
 
-  // Format 24-hour time string to 12-hour AM/PM
+  
   const formatTime = (timeString) => {
     const [hourStr, minute] = timeString.split(':');
     let hour = parseInt(hourStr, 10);

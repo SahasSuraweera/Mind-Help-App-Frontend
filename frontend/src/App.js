@@ -25,6 +25,7 @@ import StaffView from './components/StaffView';
 import StaffUpdate from './components/StaffUpdate';
 import CounsellorScheduleCreate from './components/CounsellorScheduleCreate'; 
 
+
 import './styles/App.css';
 
 
@@ -87,6 +88,7 @@ function App() {
           <Route path="/staff/new" element={<StaffForm />} />
           <Route path="/staff/view/:staffId" element={<StaffView />} />
           <Route path="/staff/update/:staffId" element={<StaffUpdate />} />
+          <Route path="/counsellor/schedule/:counsellorId" element={<CounsellorScheduleCreate />} />
         </Routes>
       </main>
 

@@ -11,7 +11,6 @@ export default function CreateAppointment() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Destructure safely from location.state
   const {
     slotId,
     slotDate,
@@ -42,7 +41,7 @@ export default function CreateAppointment() {
     }
   }, [patientId]);
 
-  // Prevent form submission if details missing
+  
   if (!counsellorId || !slotId || !slotDate || !slotTime || !hourlyRate) {
     return <p>❌ Missing appointment details. Please go back and select a valid slot.</p>;
   }
@@ -93,7 +92,7 @@ export default function CreateAppointment() {
   return (
     <div className="create-appointment-container">
       <div className="appointment-card">
-      <h2>📅 Book Appointment</h2>
+      <h2>Book Appointment</h2>
       <p><strong>Counsellor ID:</strong> {counsellorId}</p>
       <p><strong>Name:</strong> {displayName}</p>
       <p><strong>Date:</strong> {slotDate}</p>

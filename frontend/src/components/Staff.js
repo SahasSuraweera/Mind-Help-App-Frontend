@@ -119,7 +119,7 @@ export default function StaffTable() {
                       onClick={() =>
                         navigate(`/counsellor/schedule/${staff.counsellorId}`)
                       }
-                      //disabled={!staff.counsellorId}
+                      disabled={staff.jobRole != "Counsellor"}
                     >
                       Schedule
                     </button>
