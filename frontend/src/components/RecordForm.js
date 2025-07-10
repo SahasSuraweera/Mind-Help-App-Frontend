@@ -40,11 +40,11 @@ export default function RecordForm() {
         required
       />
 
-      <label>Doctor</label>
+      <label>Counsellor</label>
       <input
         type="text"
         name="doctor"
-        placeholder="Enter doctor's name"
+        placeholder="Enter counsellors's name"
         onChange={handleChange}
         value={record.doctor}
         required

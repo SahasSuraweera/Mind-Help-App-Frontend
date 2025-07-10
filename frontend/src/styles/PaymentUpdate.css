@@ -1,73 +1,131 @@
-.payment-update-container {
-  max-width: 300px;
-  margin: 2rem auto; /* center horizontally with top/bottom margin */
-  padding: 2rem 2.5rem;
-  background-color: #fff;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
-  box-sizing: border-box;
-  justify-content: center;
-  column-gap: normal;
-  max-height: fit-content;
-}
-
-.payment-update-container h2 {
-  margin-bottom: 1.5rem;
-  color: #004080;
+.payment-details-container {
+  background: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+  padding: 32px 24px 24px 24px;
+  margin: 32px auto;
+  max-width: 480px;
+  font-family: 'Segoe UI', Arial, sans-serif;
   text-align: center;
+
 }
 
-.payment-update-container p {
-  margin: 0.3rem 0;
+.payment-details-container h2 {
+  margin-bottom: 18px;
+  color: #2d3a4b;
+  font-size: 1.5rem;
+}
+
+.payment-details-container p {
+  margin: 10px 0;
+  font-size: 1.05rem;
+  
+}
+
+.payment-details-container input[type="text"],
+.payment-details-container input[type="number"],
+.payment-details-container textarea {
+  width: 90%;
+  padding: 7px 10px;
+  margin-top: 4px;
+  margin-bottom: 8px;
+  border: 1px solid #bfc9d1;
+  border-radius: 4px;
   font-size: 1rem;
+  background: #f7fafc;
+  transition: border 0.2s;
 }
 
-.payment-update-container label {
-  display: block;
-  margin-top: 1rem;
-  font-weight: 600;
-  color: #003366;
-}
-
-.payment-update-container input[type="number"],
-.payment-update-container select {
-  width: 100%;
-  padding: 0.4rem 0.6rem;
-  margin-top: 0.3rem;
-  border: 1.5px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  transition: border-color 0.3s ease;
-  box-sizing: border-box;
-}
-
-.payment-update-container input[type="number"]:focus,
-.payment-update-container select:focus {
-  border-color: #004080;
+.payment-details-container input[type="text"]:focus,
+.payment-details-container input[type="number"]:focus,
+.payment-details-container textarea:focus {
+  border: 1.5px solid #0078d7;
   outline: none;
+  background: #fff;
 }
 
-.payment-update-container button {
-  margin-top: 1.8rem;
-  width: 100%;
-  padding: 0.7rem;
-  background-color: #004080;
+.payment-details-container textarea {
+  resize: vertical;
+  min-height: 50px;
+  max-height: 120px;
+}
+
+.edit-button,
+.update-button,
+.cancel-button,
+.refund-button,
+.back-button {
+  display: inline-block;
+  margin-top: 10px;
+  margin-right: 8px;
+  padding: 7px 18px;
+  font-size: 1rem;
   border: none;
-  border-radius: 8px;
-  color: white;
-  font-weight: 700;
-  font-size: 1.1rem;
+  border-radius: 10px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  min-width: 200px;
 }
 
-.payment-update-container button:disabled {
-  background-color: #7a9cc6;
+.edit-button {
+  background: #0078d7;
+  color: #fff;
+}
+
+.edit-button:hover {
+  background: #005fa3;
+}
+
+.update-button {
+  background: #285fa7;
+  color: #fff;
+}
+
+.update-button:hover {
+  background: #213088;
+}
+
+.cancel-button {
+  background: #e0e0e0;
+  color: #333;
+}
+
+.cancel-button:hover {
+  background: #bdbdbd;
+}
+
+.refund-button {
+  background: #ff0800;
+  color: #fff;
+}
+
+.refund-button:disabled {
+  background: #bdbdbd;
+  color: #fff;
   cursor: not-allowed;
 }
 
-.payment-update-container button:hover:not(:disabled) {
-  background-color: #003366;
+.refund-button:hover:not(:disabled) {
+  background: #e65100;
+}
+
+.back-button {
+  background: #f5f5f5;
+  color: #333;
+  margin: 24px auto 0 auto;
+  display: block;
+  width: 120px;
+}
+
+.back-button:hover {
+  background: #e0e0e0;
+}
+
+@media (max-width: 600px) {
+  .payment-details-container {
+    padding: 16px 6px 16px 6px;
+    max-width: 98vw;
+  }
+  .back-button {
+    width: 100%;
+  }
 }

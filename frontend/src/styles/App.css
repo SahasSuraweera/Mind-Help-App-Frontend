@@ -7,11 +7,10 @@
 }
 
 .app-header {
-  background-color: #0077cc;
-  padding: 1rem 2rem;
+  background-color: #0077cc;;
   color: white;
   text-align: center;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  height: fit-content;
 }
 
 .app-main {
@@ -21,7 +20,7 @@
 
 .app-footer {
   background-color: #f2f2f2;
-  padding: 1rem;
+  
   text-align: center;
   font-size: 0.9rem;
   color: #666;
@@ -29,19 +28,37 @@
 }
 
 .nav-bar {
-  margin-top: 1rem;
   display: flex;
+  gap: 20px;
   justify-content: center;
-  gap: 1.5rem;
+  padding: 12px 24px;
+  border-radius: 8px;
+  background-color: rgba(22, 21, 21, 0.15);
+  width: 100%;
+
 }
 
 .nav-bar a {
-  color: white;
   text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  color: #ffffff;
+  font-weight: 500;
+  padding: 8px 12px;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+  
 }
 
 .nav-bar a:hover {
-  color: #ffdd57;
+  background-color: #041d8d;
+ 
+}
+
+.nav-bar a.active {
+  background-color: #fdfeff;
+  color: rgb(19, 19, 19);
+}
+.nav-bar a.active:hover {
+  background-color: #ffffff;
+  color: rgb(19, 19, 19);
+  
 }

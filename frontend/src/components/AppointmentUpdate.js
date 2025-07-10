@@ -8,7 +8,8 @@ export default function Appointment() {
   const { appointmentId } = useParams();
   const navigate = useNavigate();
   const location = useLocation();
-  const slotId = location.state?.slotId;
+  const slotId = location.state?.slotId || '';
+  const counsellorId = location.state?.counsellorId || '';
 
   const [appointment, setAppointment] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -20,6 +21,7 @@ export default function Appointment() {
   const [appointmentDate, setAppointmentDate] = useState('');
   const [appointmentTime, setAppointmentTime] = useState('');
   const [notes, setNotes] = useState('');
+  const [paymentStatus, setPaymentStatus] = useState(''); // hidden field
 
   useEffect(() => {
     const fetchAppointment = async () => {
@@ -32,6 +34,7 @@ export default function Appointment() {
         setAppointmentDate(data.appointmentDate || '');
         setAppointmentTime(data.appointmentTime || '');
         setNotes(data.notes || '');
+        setPaymentStatus(data.paymentStatus || '');
       } catch (err) {
         console.error('Error fetching appointment:', err);
         setError('Failed to load appointment.');
@@ -46,13 +49,19 @@ export default function Appointment() {
   const updateAppointment = async () => {
     try {
       await appointmentApi.put(`/appointments/${appointmentId}`, {
-        patientName,
-        contactNumber,
+        appointmentId,
+        slotId,
         appointmentDate,
         appointmentTime,
-        notes
+        appointmentFee: appointment.appointmentFee,
+        patientID: appointment.patientId,
+        patientName,
+        contactNumber,
+        notes,
+        paymentStatus, // still sent to backend
+        counsellorId,
+        deleted: false
       });
-
       alert('Appointment updated successfully!');
       setAppointment(prev => ({
         ...prev,
@@ -60,7 +69,8 @@ export default function Appointment() {
         contactNumber,
         appointmentDate,
         appointmentTime,
-        notes
+        notes,
+        paymentStatus
       }));
     } catch (err) {
       console.error('Error updating appointment:', err);
@@ -94,14 +104,15 @@ export default function Appointment() {
       <h2>Appointment Details</h2>
 
       <div>
-      <label className="readonly-label">Appointment ID</label><br />
-      <div className="readonly-field">{appointmentId}</div>
-     </div>
+        <label className="readonly-label">Appointment ID</label><br />
+        <div className="readonly-field">{appointmentId}</div>
+      </div>
 
-     <div>
-     <label className="readonly-label">Counsellor ID</label><br />
-     <div className="readonly-field">{appointment.counsellorId}</div>
-    </div>
+      <div>
+        <label className="readonly-label">Counsellor ID</label><br />
+        <div className="readonly-field">{appointment.counsellorId}</div>
+      </div>
+
       <div>
         <label><strong>Patient Name:</strong></label><br />
         <input
