@@ -16,6 +16,10 @@ import CounsellorSchedule from './components/CounsellorSchedule';
 import AppointmentCreate from './components/AppointmentCreate';
 import AppointmentList from './components/AppointmentList';
 import AppointmentUpdate from './components/AppointmentUpdate';
+import Staff from './components/Staff'; 
+import StaffForm from './components/StaffForm';
+import StaffView from './components/StaffView';
+import StaffUpdate from './components/StaffUpdate';
 
 import './styles/App.css';
 
@@ -33,6 +37,7 @@ function App() {
           <nav className="nav-bar">
             <Link to="/">Home</Link>
             <Link to="/patients">Patients</Link>
+            <Link to="/Staff">Staff</Link>
             <Link to="/counsellors">Counsellors</Link>
             <Link to="/appointments">Appointments</Link>
             <Link to="/payments">Payments</Link>
@@ -56,6 +61,11 @@ function App() {
             <Route path="/counsellors/schedule/:counsellorId" element={<CounsellorSchedule />} />
             <Route path="/appointments/create/:counsellorId" element={<AppointmentCreate />} />
             <Route path="/appointment/update/:appointmentId" element={<AppointmentUpdate />} />
+            <Route path="/staff" element={<Staff />} />
+            <Route path="/staff/new" element={<StaffForm />} />
+            <Route path="/staff/view/:staffId" element={<StaffView />} />
+            <Route path="/staff/update/:staffId" element={<StaffUpdate />} />
+
           </Routes>
         </main>
         <footer className="app-footer">
