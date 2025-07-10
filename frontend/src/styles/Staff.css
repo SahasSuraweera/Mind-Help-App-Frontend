@@ -48,6 +48,8 @@
   cursor: pointer;
 }
 
+
+
 .search-button:hover {
   background-color: #0056b3;
 }
@@ -93,16 +95,26 @@
   background-color: #f1f1f1;
 }
 
+
+
 .view-button {
-  padding: 0.4rem 0.8rem;
   background-color: #17a2b8;
   color: white;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 0.85rem;
+}
+
+.schedule-button {
+  background-color: #3f8ed4;
+  color: white;
 }
 
 .view-button:hover {
   background-color: #117a8b;
+}
+
+.schedule-button:hover {
+  background-color: #4d52d3;
+}
+.action-buttons {
+  display: flex;
+  gap: 8px; 
 }

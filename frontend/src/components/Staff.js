@@ -4,6 +4,7 @@ import staffApi from "../services/staffApi";
 import "../styles/Staff.css";
 
 export default function StaffTable() {
+  
   const [staffList, setStaffList] = useState([]);
   const [filteredStaffList, setFilteredStaffList] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -49,7 +50,6 @@ export default function StaffTable() {
 
   return (
     <div className="staff-container">
-      {/* Header with title + search (left) and add button (right) */}
       <div className="staff-header">
         <div className="header-left">
           <h2>Staff Members</h2>
@@ -71,7 +71,6 @@ export default function StaffTable() {
         </button>
       </div>
 
-      {/* Data section */}
       {loading ? (
         <p>Loading...</p>
       ) : filteredStaffList.length === 0 ? (
@@ -107,13 +106,24 @@ export default function StaffTable() {
                 <td>{staff.staffEmail}</td>
                 <td>{staff.staffPhone}</td>
                 <td>
-                  <button
-                    className="view-button"
-                    onClick={() => navigate(`/staff/view/${staff.staffId}`)}
-                    title="View Staff"
-                  >
-                    View
-                  </button>
+                  <div className="action-buttons">
+                    <button
+                      className="view-button"
+                      onClick={() => navigate(`/staff/view/${staff.staffId}`)}
+                    >
+                      View
+                    </button>
+
+                    <button
+                      className="schedule-button"
+                      onClick={() =>
+                        navigate(`/counsellor/schedule/${staff.counsellorId}`)
+                      }
+                      //disabled={!staff.counsellorId}
+                    >
+                      Schedule
+                    </button>
+                  </div>
                 </td>
               </tr>
             ))}
