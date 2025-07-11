@@ -59,7 +59,7 @@ function App() {
       </p>
       <button className="logout-button" onClick={handleLogout}>
       <FiLogOut style={{ marginRight: '5px' }} />
-      Logout
+    
      </button>
       </div>
         {showNavBar && (
@@ -108,7 +108,7 @@ function App() {
           <Route path="/staff/new" element={<StaffForm />} />
           <Route path="/staff/view/:staffId" element={<StaffView />} />
           <Route path="/staff/update/:staffId" element={<StaffUpdate />} />
-          <Route path="/counsellor/schedule/:counsellorId" element={<CounsellorScheduleCreate />} />
+          <Route path="/counsellor/schedule/:staffId" element={<CounsellorScheduleCreate />} />
           <Route path="/user/new" element={<UserForm />} />
         </Routes>
       </main>

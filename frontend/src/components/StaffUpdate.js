@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import staffApi from "../services/staffApi";
-import "../styles/StaffForm.css"; 
+import "../styles/StaffUpdate.css"; 
 
 export default function StaffUpdate() {
   const { staffId } = useParams();
@@ -42,11 +42,9 @@ export default function StaffUpdate() {
 
   return (
     <div className="staff-form">
-      <h2>✏️ Update Staff</h2>
+      <h2>Update Staff Details</h2>
       <form onSubmit={handleSubmit}>
-        <label>User ID:</label>
-        <input name="userId" value={staff.userId} onChange={handleChange} required />
-
+        
         <label>Salutation:</label>
         <input name="salutation" value={staff.salutation} onChange={handleChange} />
 

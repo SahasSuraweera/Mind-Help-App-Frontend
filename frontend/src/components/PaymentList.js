@@ -62,7 +62,7 @@ export default function PaymentList() {
 
   return (
     <div className="payment-list-container">
-      <h2 className="payment-list-heading">Payments</h2>
+      <h2 className="payment-list-heading">Search Payments</h2>
 
       <div className="filter-section">
      <select value={filterType} onChange={(e) => setFilterType(e.target.value)}>

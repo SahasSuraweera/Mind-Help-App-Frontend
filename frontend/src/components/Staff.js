@@ -28,7 +28,7 @@ export default function StaffTable() {
   }, []);
 
   const handleAddUser = () => {
-    navigate("/user/new");
+    navigate("/staff/new");
   };
 
   const handleSearch = () => {
@@ -117,7 +117,7 @@ export default function StaffTable() {
                     <button
                       className="schedule-button"
                       onClick={() =>
-                        navigate(`/counsellor/schedule/${staff.counsellorId}`)
+                        navigate(`/counsellor/schedule/${staff.staffId}`)
                       }
                       disabled={staff.jobRole !== "Counsellor"}
                     >

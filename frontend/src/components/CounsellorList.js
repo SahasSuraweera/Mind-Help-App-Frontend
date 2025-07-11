@@ -64,7 +64,7 @@ export default function CounsellorList() {
                       })
                     }
                   >
-                    Book Now
+                    Book
                   </button>
                 </div>
               </div>
@@ -76,6 +76,12 @@ export default function CounsellorList() {
           No counsellors found.
         </p>
       )}
+
+      <button className="back-button" onClick={() => window.history.back()}>
+        ⬅ Back
+      </button>
     </div>
+
+    
   );
 }

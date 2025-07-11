@@ -119,6 +119,10 @@ export default function CounsellorSchedule() {
       </div>
     </div>
 
+    <button className="back-button" onClick={() => window.history.back()}>
+        ⬅ Back
+      </button>
+
     </div>
   );
 }

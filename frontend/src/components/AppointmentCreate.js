@@ -152,6 +152,9 @@ export default function CreateAppointment() {
         </button>
       </form>
       </div>
+      <button className="back-button" onClick={() => window.history.back()}>
+        ⬅ Back
+      </button>
     </div>
   );
 }

@@ -67,7 +67,7 @@
   font-weight: bold;
   cursor: pointer;
   display: block;
-  margin-left: 955px;
+  margin-left: 900px;
   margin-top: 40px;
   
 }
@@ -123,4 +123,5 @@
 .action-buttons {
   display: flex;
   gap: 8px; 
+  width: 200px;
 }

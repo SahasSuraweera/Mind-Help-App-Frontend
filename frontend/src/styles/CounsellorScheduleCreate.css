@@ -1,99 +1,118 @@
 .schedule-container {
-  max-width: 600px;
-  margin: 30px auto;
-  padding: 20px;
-  background: #f7f9fc;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 14px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .schedule-container h2 {
-  margin-bottom: 20px;
+  text-align: center;
   color: #2c3e50;
+  margin-bottom: 20px;
+}
+
+.schedule-container p {
+  font-size: 16px;
+  color: #333;
   text-align: center;
 }
 
-.schedule-container label {
-  font-weight: 600;
-  color: #34495e;
+.date-picker-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
 }
 
-#datePicker {
-  margin-left: 10px;
-  padding: 6px 10px;
-  font-size: 16px;
-  border: 1.5px solid #ccc;
-  border-radius: 4px;
-  outline: none;
-  transition: border-color 0.3s ease;
+.date-picker-section label {
+  font-weight: 500;
+  margin-bottom: 8px;
 }
 
-#datePicker:focus {
-  border-color: #3498db;
-  box-shadow: 0 0 5px rgba(52, 152, 219, 0.5);
+.date-picker-section input[type="date"] {
+  padding: 8px 12px;
+  font-size: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  width: 200px;
 }
 
-.slots-list {
-  margin-top: 25px;
+.slots-section {
+  margin-top: 30px;
 }
 
-.slots-list h3 {
-  margin-bottom: 15px;
-  color: #34495e;
+.slots-section h3 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.slot-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+  margin-bottom: 25px;
+}
+
+.slot-item {
   text-align: center;
 }
 
-.slots-list ul {
-  padding-left: 0;
-}
-
-.slots-list li {
-  margin-bottom: 10px;
-}
-
-.slots-list label {
-  cursor: pointer;
-  user-select: none;
-  font-size: 16px;
-}
-
-.slots-list input[type="checkbox"] {
-  width: 18px;
-  height: 18px;
-  margin-right: 10px;
-  cursor: pointer;
-  vertical-align: middle;
-  accent-color: #3498db; /* checkbox color */
-}
-
-.slots-list input[type="checkbox"]:disabled {
-  cursor: not-allowed;
-  accent-color: #bbb;
-}
-
-.slots-list li label[style*="color: gray"] {
-  font-style: italic;
-}
-
-button {
+.slot-label {
   display: block;
-  margin: 25px auto 0;
-  padding: 10px 25px;
-  font-size: 17px;
-  background-color: #3498db;
-  border: none;
-  border-radius: 6px;
+  padding: 10px;
+  background-color: #eaf6ff;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.slot-label input {
+  margin-right: 8px;
+}
+
+.slot-label:hover {
+  background-color: #d4ecff;
+}
+
+.slot-label.booked {
+  background-color: #f8d7da;
+  color: #a94442;
+  cursor: not-allowed;
+}
+
+.error-message {
+  text-align: center;
+  color: #d9534f;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.save-button {
+  display: block;
+  margin: 0 auto;
+  padding: 10px 20px;
+  background-color: #28a745;
   color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
-button:disabled {
-  background-color: #8fbce6;
-  cursor: not-allowed;
+.save-button:hover {
+  background-color: #218838;
 }
 
-button:hover:not(:disabled) {
-  background-color: #2980b9;
+.save-button:disabled {
+  background-color: #6c757d;
+  cursor: not-allowed;
 }

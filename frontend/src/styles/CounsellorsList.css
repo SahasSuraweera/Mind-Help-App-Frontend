@@ -51,19 +51,20 @@
 
 .card-buttons {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+ 
 }
 
 .btn-update {
   background-color: #3498db;
   color: white;
   border: none;
-  padding: 0.5rem 1rem;
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  width: 200px;
+  margin-top: 25px;
+  width: 800px;
   height: 40px;
 }
 
@@ -76,9 +77,7 @@
   border: 1px solid #ddd;
   border-radius: 12px;
   padding: 1.5rem;
-  max-width: 600px;
-  
-
+  max-width: 600px;  
 }
 
 .section-title {

@@ -1,12 +1,13 @@
 .payment-list-container {
   padding: 2rem;
   font-family: Arial, sans-serif;
+  background-color: #ffffff;
 }
 
 .payment-list-heading {
   margin-bottom: 1rem;
   color: #333;
-  text-align: center;
+  text-align: left;
 }
 
 
@@ -40,6 +41,7 @@
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  max-width: 80px;
 }
 
 .btn-update:hover {
@@ -48,15 +50,11 @@
 
 .filter-section {
   display: flex;
-  align-items: center;
   gap: 12px;
-  margin: 20px auto;
-  padding: 10px;
   max-width: 500px;
-  justify-content: center;
-  background-color: #f1f3f5;
+  justify-content:left;
+  background-color: #ffffff;
   border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(236, 235, 235, 235);
   border: #020202;
 }
 
@@ -64,7 +62,7 @@
 .filter-section input {
   padding: 8px 12px;
   font-size: 14px;
-  border: 1px solid #faf7f7;
+  border: 1px solid #141414;
   border-radius: 6px;
   outline: none;
   transition: border-color 0.2s ease-in-out;

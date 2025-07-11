@@ -39,7 +39,7 @@ export default function StaffForm() {
 
   return (
     <div className="staff-form">
-      <h2>Register New Staff</h2>
+      <h2>Enter Staff Details</h2>
       <form onSubmit={handleSubmit}>
         <label>Salutation</label>
         <input name="salutation" value={formData.salutation} onChange={handleChange} required />

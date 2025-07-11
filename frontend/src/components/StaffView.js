@@ -49,11 +49,9 @@ export default function StaffView() {
 
   return (
     <div className="staff-view">
-      <h2>👤 Staff Details</h2>
+      
+      <h2>{`${staff.salutation} ${staff.firstName} ${staff.middleName} ${staff.lastName}`}</h2>
       <p><strong>ID:</strong> {staff.staffId}</p>
-      <p><strong>User ID:</strong> {staff.userId}</p>
-      <p><strong>Name:</strong> {`${staff.firstName} ${staff.middleName} ${staff.lastName}`}</p>
-      <p><strong>Salutation:</strong> {staff.salutation}</p>
       <p><strong>NIC:</strong> {staff.nic}</p>
       <p><strong>Gender:</strong> {staff.gender}</p>
       <p><strong>DOB:</strong> {formatDate(staff.dateOfBirth)}</p>

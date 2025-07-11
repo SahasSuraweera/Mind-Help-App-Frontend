@@ -69,23 +69,21 @@ export default function AppointmentListPage() {
 
   return (
     <div className="appointment-list-container">
-      <h2>📋 Appointments</h2>
-
-      <div style={{ marginBottom: '10px' }}>
+      <h2>Appointments Details</h2>
+    <div className="filter-buttons">
         <button
           onClick={() => setFilter('upcoming')}
           disabled={filter === 'upcoming'}
         >
           Upcoming
         </button>
-        <button
+        <button className='past-button'
           onClick={() => setFilter('past')}
-          disabled={filter === 'past'}
-          style={{ marginLeft: '10px' }}
+          disabled={filter === 'past'} 
         >
           Past
-        </button>
-      </div>
+        </button>  
+    </div>
 
       <div className="search-input-container">
         <input

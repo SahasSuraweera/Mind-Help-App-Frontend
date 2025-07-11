@@ -1,64 +1,50 @@
 .staff-view {
-  max-width: 700px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background-color: #fdfdfd;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
-  font-family: "Segoe UI", sans-serif;
-  color: #333;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 30px;
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .staff-view h2 {
   text-align: center;
-  margin-bottom: 2rem;
-  font-size: 1.8rem;
-  color: #007bff;
+  margin-bottom: 25px;
+  color: #333;
+  font-size: 24px;
 }
-
-
 
 .staff-view p {
-  font-size: 1rem;
-  text-align: center;
-  margin: 0.7rem 0;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.5rem 0;
-  border-bottom: 1px solid #eee;
-}
-
-.staff-view p strong {
-  flex: 1;
+  margin: 10px 0;
+  font-size: 16px;
   color: #444;
 }
 
-.staff-view p span {
-  flex: 2;
-  text-align: right;
-  color: #555;
+.staff-view strong {
+  color: #222;
 }
 
-/* Action Buttons */
 .action-buttons {
   display: flex;
   justify-content: space-between;
-  margin-top: 2rem;
+  margin-top: 30px;
 }
 
 .update-btn,
 .delete-btn {
-  padding: 0.75rem 1.5rem;
+  padding: 10px 20px;
   border: none;
-  border-radius: 6px;
-  font-size: 1rem;
+  border-radius: 10px;
+  font-size: 16px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 250px;
 }
 
 .update-btn {
   background-color: #007bff;
-  color: #fff;
+  color: white;
 }
 
 .update-btn:hover {
@@ -67,9 +53,9 @@
 
 .delete-btn {
   background-color: #dc3545;
-  color: #fff;
+  color: white;
 }
 
 .delete-btn:hover {
-  background-color: #c82333;
+  background-color: #a71d2a;
 }

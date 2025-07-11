@@ -5,17 +5,12 @@ import "../styles/UserForm.css";
 
 export default function UserForm() {
   const [formData, setFormData] = useState({
-    salutation: "",
-    firstName: "",
-    middleName: "",
-    lastName: "",
-    nic: "",
-    gender: "",
-    dateOfBirth: "",
-    jobRole: "",
-    joinedDate: "",
-    usersEmail: "",
-    usersPhone: "",
+    staffId: "",
+    userame: "",
+    password: "",
+    role: "",
+    phone: "",
+    
   });
 
   const navigate = useNavigate();
@@ -25,7 +20,7 @@ export default function UserForm() {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       await usersApi.post("/users", formData);
@@ -39,7 +34,7 @@ export default function UserForm() {
 
   return (
     <div className="users-form">
-      <h2>Register New users</h2>
+      <h2>Step 2 : Select Username or Password</h2>
       <form onSubmit={handleSubmit}>
         <label>Salutation</label>
         <input name="salutation" value={formData.salutation} onChange={handleChange} required />
