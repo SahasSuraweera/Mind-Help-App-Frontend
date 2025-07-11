@@ -62,3 +62,44 @@
   color: rgb(19, 19, 19);
   
 }
+
+.header-title-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.app-header-container {
+  display: flex;
+  align-items: center;           
+  padding: 0 1rem;
+  height: 100px;
+}
+
+.app-header-container h1 {
+  font-size: 1.5rem;
+  font-style: italic, bold;
+  margin: 0;
+}
+
+.user-info {
+  font-size: 20px;
+  color: white;
+  margin-left: 895px;
+  
+}
+
+.logout-button {
+  padding: 0.4rem 0.8rem;
+  background-color: rgb(8, 35, 124);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+  margin-right: 0;
+  margin-top: -0.5px;
+}
+.logout-button:hover {
+  background-color: #c82333;
+}

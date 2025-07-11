@@ -27,7 +27,6 @@ export default function CounsellorSchedule() {
     return `${hour.toString().padStart(2, '0')}:${minute} ${ampm}`;
   };
 
-  // Fetch slots from backend when counsellorId or selectedDate changes
   useEffect(() => {
     const fetchTimeSlots = async () => {
       setLoading(true);
@@ -74,12 +73,14 @@ export default function CounsellorSchedule() {
   const availableSlots = timeSlots.filter(slot => slot.available && !slot.booked);
 
   return (
+    <div className="schedule-heading"> 
+      <h2>Step 2 : Select Date and Time Slot</h2>
     <div className="schedule-container">
       <div className="schedule-card">
-      <h2 className="schedule-title">🗓️ Schedule for Counsellor: {displayName}</h2>
+      <h2 className="schedule-title">{displayName}</h2>
 
       <div className="date-picker-wrapper">
-        <label htmlFor="datepicker"><strong>Select Date:</strong></label>
+        <label htmlFor="datepicker">Select Date:</label>
         <DatePicker
           id="datepicker"
           selected={selectedDate}
@@ -89,7 +90,6 @@ export default function CounsellorSchedule() {
           minDate={new Date()}
         />
       </div>
-
       <h3 style={{ marginTop: '1rem' }}>
         Available Slots for {selectedDate.toDateString()}
       </h3>
@@ -117,6 +117,8 @@ export default function CounsellorSchedule() {
         </div>
       )}
       </div>
+    </div>
+
     </div>
   );
 }

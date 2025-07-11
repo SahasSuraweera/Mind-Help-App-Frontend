@@ -92,7 +92,7 @@ export default function CreateAppointment() {
   return (
     <div className="create-appointment-container">
       <div className="appointment-card">
-      <h2>Book Appointment</h2>
+      <h2>Step 3 : Confirm Details</h2>
       <p><strong>Counsellor ID:</strong> {counsellorId}</p>
       <p><strong>Name:</strong> {displayName}</p>
       <p><strong>Date:</strong> {slotDate}</p>
@@ -101,7 +101,7 @@ export default function CreateAppointment() {
 
       <form onSubmit={handleSubmit} style={{ marginTop: '1rem' }}>
         <div>
-          <label htmlFor="patientId">Patient ID (if registeed) :</label><br />
+          <label htmlFor="patientId">Patient ID (optional) :</label><br />
           <input
             type="text"
             id="patientId"

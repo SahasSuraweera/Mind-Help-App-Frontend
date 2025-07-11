@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import staffApi from '../services/staffApi';
-import '../styles/Payment.css';
+import '../styles/CounsellorsList.css';
 import { useNavigate } from 'react-router-dom';
 
 export default function CounsellorList() {
@@ -30,20 +30,27 @@ export default function CounsellorList() {
   }
 
   return (
-    <div className="payment-list-container">
-      <h2 className="payment-list-heading">Counsellors</h2>
+    <div className="counsellor-list-container">
+      <h2 className="counsellor-list-heading">Step 1 : Select Counsellor</h2>
 
       {counsellors.length > 0 ? (
-        <div className="payment-card-grid">
+        <div className="counsellor-card-grid">
           {counsellors.map(counsellor => (
-            <div className="payment-card" key={counsellor.counsellorId}>
+            <div className="counsellor-card" key={counsellor.counsellorId}>
               <div className="card-main">
-                <h3>Counsellor ID: {counsellor.counsellorId}</h3>
+                <div className="counsellor-box">
+                <h3 className="section-title">{counsellor.displayName}</h3>
+                <div class="counsellor-detail-wrapper">
                 <p>Staff ID: {counsellor.staffId}</p>
-                <p>Name: {counsellor.displayName}</p>
                 <p>Specialization: {counsellor.specialization}</p>
-                <p>Description: {counsellor.description}</p>
                 <p>Hourly Rate: Rs. {counsellor.hourlyRate}</p>
+                </div>
+                <div class="counsellor-description-wrapper">
+                <h4 className="section-title">Description</h4>
+                <p>{counsellor.description}</p>
+                </div>
+                </div>
+                
 
                 <div className="card-buttons">
                   <button

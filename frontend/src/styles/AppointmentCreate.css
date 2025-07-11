@@ -1,15 +1,17 @@
 .create-appointment-container {
-  max-width: 400px;
   margin: 2rem auto;
   padding: 1rem;
+
 }
 
 .appointment-card {
   background-color: #ffffff;
   border-radius: 12px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  padding: 2rem;
+  padding: 2rem 6rem 2rem 5rem;
   transition: all 0.3s ease;
+  width: 500px;
+  margin: 0 auto;
 }
 
 .appointment-card h2 {
@@ -21,6 +23,7 @@
 .appointment-card p {
   font-size: 16px;
   margin-bottom: 0.5rem;
+
 }
 
 form label {
@@ -45,7 +48,7 @@ form textarea {
 
 form input:focus,
 form textarea:focus {
-  border-color: #1976d2;
+  border-color: black;
   outline: none;
 }
 
@@ -70,7 +73,7 @@ button[type='submit'] {
 }
 
 button[type='submit']:hover {
-  background-color: #1565c0;
+  background-color: #02034d;
 }
 
 button[disabled] {

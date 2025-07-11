@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Link, useParams } from 'react-router-dom';
 import { useLocation } from 'react-router-dom';
 import { NavLink } from 'react-router-dom';
+import { FiLogOut } from 'react-icons/fi';
+import { useNavigate } from 'react-router-dom';
 
 import Login from './components/Login';
 import Home from './components/Home';
@@ -24,6 +26,7 @@ import StaffForm from './components/StaffForm';
 import StaffView from './components/StaffView';
 import StaffUpdate from './components/StaffUpdate';
 import CounsellorScheduleCreate from './components/CounsellorScheduleCreate'; 
+import UserForm from './components/UserForm';
 
 
 import './styles/App.css';
@@ -37,11 +40,28 @@ function RecordListWrapper() {
 function App() {
   const location = useLocation();
   const showNavBar = location.pathname !== '/';
+  const username = sessionStorage.getItem("username");
+  const navigate = useNavigate();
+  
+  const handleLogout = () => {
+  sessionStorage.clear(); 
+  navigate('/');   
+};
 
   return (
+    
     <div className="app-container">
       <header className="app-header">
-        <h1>🩺 MindHelp Counselling Management System</h1>
+        <div className="app-header-container">
+        <h1> MindHelp Counselling Management System</h1>
+        <p className="user-info">
+        <strong>{sessionStorage.getItem("username")}</strong>
+      </p>
+      <button className="logout-button" onClick={handleLogout}>
+      <FiLogOut style={{ marginRight: '5px' }} />
+      Logout
+     </button>
+      </div>
         {showNavBar && (
           <nav className="nav-bar">
             <NavLink to="/home" end className={({ isActive }) => (isActive ? 'active' : '')}>
@@ -89,6 +109,7 @@ function App() {
           <Route path="/staff/view/:staffId" element={<StaffView />} />
           <Route path="/staff/update/:staffId" element={<StaffUpdate />} />
           <Route path="/counsellor/schedule/:counsellorId" element={<CounsellorScheduleCreate />} />
+          <Route path="/user/new" element={<UserForm />} />
         </Routes>
       </main>
 

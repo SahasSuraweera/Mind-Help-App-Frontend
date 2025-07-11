@@ -27,8 +27,8 @@ export default function StaffTable() {
     fetchStaff();
   }, []);
 
-  const handleAddStaff = () => {
-    navigate("/staff/new");
+  const handleAddUser = () => {
+    navigate("/user/new");
   };
 
   const handleSearch = () => {
@@ -66,7 +66,7 @@ export default function StaffTable() {
             </button>
           </div>
         </div>
-        <button className="add-button" onClick={handleAddStaff}>
+        <button className="add-button" onClick={handleAddUser}>
           + Add Staff
         </button>
       </div>
@@ -119,7 +119,7 @@ export default function StaffTable() {
                       onClick={() =>
                         navigate(`/counsellor/schedule/${staff.counsellorId}`)
                       }
-                      disabled={staff.jobRole != "Counsellor"}
+                      disabled={staff.jobRole !== "Counsellor"}
                     >
                       Schedule
                     </button>

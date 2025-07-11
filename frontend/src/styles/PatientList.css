@@ -1,3 +1,19 @@
+.parent-container {
+  display: flex;
+  align-items: end;
+}
+
+.add-patient-button {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-left: 605px; 
+}
+
 .patient-list-container {
   max-width: 800px;
   margin: 2rem auto;
@@ -65,6 +81,8 @@
   cursor: pointer;
   font-size: 0.85rem;
   transition: background-color 0.3s ease;
+  min-width: 125px;
+  text-align: center;
 }
 
 .card-actions button:hover {

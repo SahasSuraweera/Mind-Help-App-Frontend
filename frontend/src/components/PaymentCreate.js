@@ -22,7 +22,7 @@ export default function CreatePayment() {
   const [currentDate, setCurrentDate] = useState('');
   const [currentTime, setCurrentTime] = useState('');
 
-  const createdStaffId = 3;
+  const createdStaffId = sessionStorage.getItem("staffId");;
 
   useEffect(() => {
     if (!appointmentId || !amount) {

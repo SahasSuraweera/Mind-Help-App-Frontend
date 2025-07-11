@@ -2,6 +2,7 @@ import React from 'react';
 import '../styles/Home.css';
 
 export default function Home() {
+  
   return (
     <div className="home-container">
       <h2>Welcome to MindHelp</h2>

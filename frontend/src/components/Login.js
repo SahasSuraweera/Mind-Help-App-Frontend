@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 
 export default function Login() {
   const [form, setForm] = useState({ username: '', password: '' });
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -16,12 +16,18 @@ export default function Login() {
     e.preventDefault();
     try {
       const res = await userApi.post('users/login', form);
+      const userRes = await userApi.post('users/username', { username: form.username });
+
+      sessionStorage.setItem("username", userRes.data.username);
+      sessionStorage.setItem("role", userRes.data.role); 
+      sessionStorage.setItem("staffId", userRes.data.staffId)
+
       navigate ('/home'); 
       console.log('✅ Login successful:', res.data);
 
 
     } catch (err) {
-      console.error('❌ Login failed:', err.response?.data || err.message);
+      console.error('Login failed:', err.response?.data || err.message);
       alert('Inavlid Username or Password. Try Again!');
     }
   };

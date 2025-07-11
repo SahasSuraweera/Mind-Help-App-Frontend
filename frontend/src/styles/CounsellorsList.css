@@ -1,0 +1,102 @@
+.counsellor-list-container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  
+}
+
+.counsellor-list-heading {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  color: #3498db;
+}
+
+.counsellor-card-grid {
+  display: flex;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  width: 100%;
+  gap: 100px;
+    justify-content: center;
+    
+}
+
+.counsellor-card {
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 1rem;
+  min-width: 400px;
+  text-align: left;
+}
+
+.counsellor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+.card-main h3 {
+  margin-top: 0;
+  font-size: 1.4rem;
+  color: #007bff;
+  text-align: center;
+}
+
+.card-main p {
+  margin: 0.3rem 0;
+  font-size: 0.95rem;
+  color: #555;
+  text-align: left;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.btn-update {
+  background-color: #3498db;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 200px;
+  height: 40px;
+}
+
+.btn-update:hover {
+  background-color: #218838;
+}
+
+.counsellor-box {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  padding: 1.5rem;
+  max-width: 600px;
+  
+
+}
+
+.section-title {
+  margin-bottom: 0.75rem;
+  color: #007bff;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #e0e0e0;
+  padding-bottom: 0.25rem;
+}
+
+.counsellor-detail-wrapper p,
+.counsellor-description-wrapper p {
+  margin: 0.4rem 0;
+  color: #333;
+  font-size: 18px;
+}
+
+.counsellor-description-wrapper {
+  margin-top: 1rem;
+}
+

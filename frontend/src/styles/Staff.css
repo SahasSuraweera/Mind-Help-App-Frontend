@@ -1,5 +1,5 @@
 .staff-container {
-  max-width: 1200px;
+  max-width: 100%;
   margin: 2rem auto;
   padding: 2rem;
   background-color: #ffffff;
@@ -29,6 +29,9 @@
   margin-top: 0.5rem;
   display: flex;
   gap: 0.5rem;
+  align-items: center; /* ensures vertical alignment */
+  height: 2rem; 
+  
 }
 
 .search-input {
@@ -40,12 +43,13 @@
 }
 
 .search-button {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem;
   background-color: #007bff;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: -3.3px;
 }
 
 
@@ -62,6 +66,10 @@
   border-radius: 6px;
   font-weight: bold;
   cursor: pointer;
+  display: block;
+  margin-left: 955px;
+  margin-top: 40px;
+  
 }
 
 .add-button:hover {
@@ -71,14 +79,12 @@
 .staff-table {
   width: 100%;
   border-collapse: collapse;
-  margin-top: 1rem;
   font-size: 0.95rem;
 }
 
 .staff-table th,
 .staff-table td {
   border: 1px solid #ddd;
-  padding: 0.75rem;
   text-align: left;
 }
 
