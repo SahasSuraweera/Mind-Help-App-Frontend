@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import userApi from '../services/userApi';
 import '../styles/Login.css';
 import { useNavigate } from 'react-router-dom'; 
 
@@ -12,24 +11,25 @@ export default function Login() {
     setForm(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
-    try {
-      const res = await userApi.post('users/login', form);
-      const userRes = await userApi.post('users/username', { username: form.username });
 
-      sessionStorage.setItem("username", userRes.data.username);
-      sessionStorage.setItem("role", userRes.data.role); 
-      sessionStorage.setItem("staffId", userRes.data.staffId)
+    // ✅ Simulate a successful login for any username and password
+    const dummyUser = {
+      username: form.username || "guest",
+      role: "user",
+      staffId: "TEMP001"
+    };
 
-      navigate ('/home'); 
-      console.log('✅ Login successful:', res.data);
+    // Save dummy session info
+    sessionStorage.setItem("username", dummyUser.username);
+    sessionStorage.setItem("role", dummyUser.role);
+    sessionStorage.setItem("staffId", dummyUser.staffId);
 
+    console.log("✅ Dummy login successful:", dummyUser);
 
-    } catch (err) {
-      console.error('Login failed:', err.response?.data || err.message);
-      alert('Inavlid Username or Password. Try Again!');
-    }
+    // Navigate to homepage
+    navigate('/home');
   };
 
   return (

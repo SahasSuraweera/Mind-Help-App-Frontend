@@ -1,7 +1,7 @@
 /* Login.css */
 
 .signin-container {
-  max-width: 360px;
+  max-width: 450px;
   margin: 80px auto;
   padding: 30px 25px;
   background: #f5f7fa;
@@ -30,6 +30,7 @@
   border: 1.8px solid #ddd;
   border-radius: 6px;
   transition: border-color 0.3s ease;
+  max-width: 400px;
 }
 
 .signin-container input[type="text"]:focus,

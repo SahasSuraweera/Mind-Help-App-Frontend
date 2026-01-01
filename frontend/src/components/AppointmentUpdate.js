@@ -161,10 +161,10 @@ export default function Appointment() {
 
       <div style={{ marginTop: '1em' }}>
         <button onClick={updateAppointment} style={{ marginRight: '10px' }}>
-          Update Appointment
+          Update 
         </button>
         <button onClick={deleteAppointment} style={{ backgroundColor: 'red', color: 'white' }}>
-          Cancel Appointment
+          Cancel 
         </button>
       </div>
     </div>

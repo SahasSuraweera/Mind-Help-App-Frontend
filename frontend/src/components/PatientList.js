@@ -30,7 +30,7 @@ export default function PatientList() {
       <ul className="patient-list">
         <div class="parent-container">
         <button className="add-patient-button" onClick={() => navigate('/patients/new')}>
-          ➕ Add New Patient
+          ➕ Add Patient
         </button>
         </div>
         <br/>
